@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SPP</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css' )}}" rel="stylesheet">
+
+</head>
+
+<body>
+    <section class="backimg">
+        <div class="navbar">
+            <div class="img-logo">
+                <h1>SPP</h1>
+            </div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">contact us</a></li>
+                <li><a href="">location</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1> Solar Power Prediction</h1>
+            <p >So, this is website for solar power prediction based on Neural network.<br>
+               We have used Artificial Neural network technique for 
+                making the predictions.
+            </p>
+          
+        </div>
+        
+
+    </section>
+    <section class="backimg" >
+    <div class="container">
+    <h1>Fill the information correctly,according to your city/state/country.</h1>
+     <div class="inside-container">
+    <form action ="/predict", method="POST", enctype="multipart/form-data">
+        <div class="formdesign" id="temp">
+         <span class="sub-heading"> Enter Air temperature:</span> <br> <input type="text" placeholder=" value in DegC"  name="Air_Temp" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="humid">
+          <span class="sub-heading"> Enter Relative Humidity:</span>  <br> <input type="text" placeholder="value in %" name="Relative_Humidity" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="rtd">
+           <span class="sub-heading"> Enter RTD:</span>  <br><input type="text"  placeholder=" value  in DegC" name="RTD" required><b><span class="formerror"></span></b>
+        </div>
+        
+        <div class="formdesign" id="volt">
+           <span class="sub-heading"> Enter solar Radiation :</span> <br> <input type="text" placeholder=" Value in W/m^2" name="Solar_Radiation" required><b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="volt">
+           <span class="sub-heading"> Enter Array Voltage:</span>  <br><input type="text" placeholder=" Value in volt" name="Array_Voltage" required><b><span class="formerror"></span></b>
+        </div>
+        
+        <div class="formdesign" id=" Current">
+           <span class="sub-heading"> Enter Array Current:</span>  <br><input type="text" placeholder=" value in Ampere" name="Array_Current" required><b><span class="formerror"></span></b>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block btn-large" style="color: white">Predict</button>
+    
+    </div>  
+
+    </form>
+    <div class="formdesign">
+        <span class="sub-heading">{{ prediction_text }}</span>
+     </div>
+    
+    </section>
+</body>
+
+</html>

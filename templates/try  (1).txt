@@ -1,0 +1,327 @@
+INDEX TEXT file for basic HTML site
+...................................................................................
+...................................................................................
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Solar Power Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/predict", method="POST", enctype="multipart/form-data">
+    	  <input type="text" name="Air_Temp">
+        <input type="text" name="Relative_Humidity">
+		    <input type="text" name="Solar_Radiation">
+		    <input type="text" name="RTD">
+        <input type="text" name="Array_Voltage">
+        <input type="text" name="Array_Current">
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+
+
+HTML file ...............
+
+<html>
+    <body>
+        <form action="/predict" method="POST">
+            Air Temp(DegC): <input type="text" name="Air_temp" ><br>
+            Relative Humidity(%): <input type="text" name="Relative_Humidity" ><br>
+            Solar Radiatoin(W/m2): <input type="text" name="solar_radiation" ><br>
+            RTD(DegC): <input type="text" name="rtd" ><br>
+            Array Voltage(V): <input type="text" name="array_voltage" ><br>
+            Array Current(A): <input type="text" name="array_current" ><br>
+            Class: {{result}} <br>
+            <input type="submit" value="Predict">
+        </form>
+    </body>
+</html>
+
+
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+
+
+CSS FILE (MAIN).........................
+
+body{
+    margin: 0%;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+/* Landing and navbar section */
+
+.backimg{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(0,0,0,0.75)),url(/static/images/image_one.jpg);
+    background-size:  cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.navbar h1{
+    color: #fff;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+
+.navbar ul li{
+    list-style:  none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration:  none;
+    color: #fff;
+    text-transform: uppercase;
+
+
+}
+.navbar ul li::after{
+    content: " ";
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover:after{
+    width: 100%;
+
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) ;
+    text-align: center;
+    color: #fff;
+}
+
+.content p{
+    line-height: 25px;
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin: 20px auto;
+
+}
+.content h1{
+    font-size: 3rem;
+    margin-top: 80px;
+}
+
+/* form fill section */  
+
+
+
+.container{
+    margin:  35px;
+    text-align: center;
+    
+}
+.container h1{
+    font-size: 3rem;
+    font-weight: bolder;
+    color: #ffffff;
+}
+.inside-container{
+    padding: auto;
+    text-align:  center;
+
+}
+
+.formdesign {
+    display: inline-block;
+    color: rgb(248, 248, 248);
+    margin: 40px 30px;
+    font-size: 20px;
+}
+.formdesign p{
+    font-size: 2rem;
+}
+
+.formdesign input {
+    padding: 9px 11px;
+    border: 1px solid rgb(255, 255, 255);
+    margin: 9px;
+    border-radius: 4px;
+    font-size: 21px;
+    background-color: transparent;
+}
+
+.formerror {
+    color: rgb(255, 255, 255);
+}
+.sub-heading{
+    font-size: 35px;
+    color:#ffffff;
+}
+
+/*  button */
+
+.content2{
+    width: 100%;
+    transform: translateY(-5%) ;
+    MARGIN: 40px auto;
+    text-align: center;
+    color: #fff;
+}
+
+button{
+    width: 200px;
+    text-align: center;
+    padding: 15px 0;
+    margin: 10px auto;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    
+}
+button a{
+    color: #fff; 
+    text-decoration: none;
+    font-size: 1rem;
+}
+button span{
+    text-transform: uppercase;
+    background: #ffffff;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+button:hover span{
+    width: 100%;
+
+}
+button:hover{
+    border: none;
+}
+
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+
+
+MAIN FILE...........................................................
+
+# from sys import float_repr_style
+from tkinter.ttk import Style
+from turtle import color
+import tensorflow as tf
+import numpy as np
+from tensorflow import keras
+from flask import *
+app = Flask(__name__)
+
+model = tf.keras.models.load_model('NeuralN_try6.h5')
+
+
+@app.route('/')
+def home():
+    #result =''
+    return render_template('ayush_one.html')
+
+
+
+@app.route('/predict', methods=['POST', 'GET'])
+def predict():
+    Air_Temp = request.form.get('Air_Temp')
+    Relative_Humidity = request.form.get('Relative_Humidity')
+    Solar_Radiation = request.form.get('Solar_Radiation')
+    RTD = request.form.get('RTD')
+    Array_Voltage = request.form.get('Array_Voltage')
+    Array_Current = request.form.get('Array_Current')
+    model_input = tf.strings.to_number([Air_Temp, Relative_Humidity, Solar_Radiation, RTD, Array_Voltage, Array_Current])
+    model_input = tf.expand_dims(model_input, axis=0)
+    # model_input = tf.expand_dims(model_input, axis=1)
+    result = model.predict(model_input)
+    return render_template('ayush_one.html',prediction_text = "The Power Generated is: {}".format(result))
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
+...............................................................................................
