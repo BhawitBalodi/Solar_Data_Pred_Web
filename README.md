@@ -14,4 +14,4 @@ This project is all about the importance of UI/UX and I added some features whic
 
 | Home      |
 |------------|
-| <img src="https://user-images.githubusercontent.com/82761457/147730051-e34b3363-7281-4f0c-b736-b043ef9dc43b.png" width="250"> |
+| <img src="![solarweb1](https://user-images.githubusercontent.com/82761457/189285313-fa67ce0c-3637-44e4-8abd-eefc2c066724.png)" width="250"> |
