@@ -13,6 +13,7 @@ body{
     background-size:  cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 
 }
 .navbar{
@@ -178,3 +179,7 @@ button:hover{
     border: none;
 }
 
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}

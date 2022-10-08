@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>SOlarsite</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Solar Power Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/predict", method="POST", enctype="multipart/form-data">
+    	  <input type="number" name="Air_Temp">
+        <input type="number" name="Wind_speed">
+		    <input type="number" name="Pannel_temp">
+		    <input type="number" name="Array_Voltage">
+        <input type="number" name="Array_Current">
+        <input type="number" name="Solar_Radiation">
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>

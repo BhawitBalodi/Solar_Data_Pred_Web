@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SPP</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css' )}}" rel="stylesheet">
+
+</head>
+
+<body>
+    <section class="backimg">
+        <div class="navbar">
+            <div class="img-logo">
+                <h1>SPP</h1>
+            </div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">contact us</a></li>
+                <li><a href="">location</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1> Solar Power Prediction</h1>
+            <p>So, this is website for solar power prediction based on Neural network.<br>
+                We have used Artificial Neural network technique for
+                making the predictions.
+            </p>
+
+        </div>
+
+
+    </section>
+    <section class="backimg">
+        <div class="container">
+            <h1>Fill the information correctly,according to your city/state/country.</h1>
+            <div class="inside-container">
+                <form action="/predict" , method="POST" , enctype="multipart/form-data">
+                    <div class="formdesign">
+                        <input type="text" style="color: white;" name="Air_Temp" placeholder="Enter Air Tempreature">
+                    </div>
+
+                    <div class="formdesign">
+                        <input type="text" style="color: white;" name="Wind_speed" placeholder="Enter Wind Speed">
+                    </div>
+
+                    <div class="formdesign" id="rtd">
+                        <input type="text" style="color: white;" name="Pannel_temp" placeholder="Enter Pannel Temp">
+                    </div>
+
+                    <div class="formdesign" id="volt">
+                        <input type="text" style="color: white;" name="Array_Voltage"
+                            placeholder="Enter Array Voltage">
+                    </div>
+
+                    <div class="formdesign" id="volt">
+                        <input type="text" style="color: white;" name="Array_Current"
+                            placeholder="Enter Array Current">
+                    </div>
+
+                    <div class="formdesign" id=" Current">
+                        <input type="text" style="color: white;" name="Solar_Radiation"
+                            placeholder="Enter Solar Radiation(W/m2)">
+                    </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large button1"
+                style="color: white">Predict</button>
+
+        </div>
+
+        </form>
+        <div class="formdesign">
+            <span class="sub-heading">{{ prediction_text }}</span>
+        </div>
+
+    </section>
+</body>
+
+</html>

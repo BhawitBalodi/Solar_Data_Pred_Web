@@ -13,7 +13,7 @@ model = tf.keras.models.load_model('NeuralN_try8.h5')
 @app.route('/')
 def home():
     #result =''
-    return render_template('ayush_one.html')
+    return render_template('ekor.html')
 
 
 
@@ -29,7 +29,7 @@ def predict():
     model_input = tf.expand_dims(model_input, axis=0)
     # model_input = tf.expand_dims(model_input, axis=1)
     result = model.predict(model_input)
-    return render_template('ayush_one.html',prediction_text = "The Power Generated is: {} Watt".format(result))
+    return render_template('ekor.html',prediction_text = "The Power Generated is: {} Watt".format(result))
 
 
 if __name__ == "__main__":
