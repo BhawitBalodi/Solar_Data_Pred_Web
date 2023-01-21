@@ -1,6 +1,7 @@
 # Solar Data Prediction Website
 
-This is a website which will give the result of Solar Power Generation. This is based on Artificial Neural network.
+Enter the values according to your area, in ouptput you will get Power of Solar Panel 
+This is based on Artificial Neural network.
 
 # Screenshorts
 
